@@ -1,22 +1,32 @@
 import React, {ReactNode} from 'react';
-import {TouchableOpacity} from 'react-native';
+import {TextStyle, TouchableOpacity, View} from 'react-native';
 
 import {styles} from './styles';
 
 interface ButtonProps {
   disabled?: boolean;
   onPress: () => any;
+  variation?: 'primary' | 'secondary' | 'tertiary' | 'outline';
   children: ReactNode;
+  style?: TextStyle | TextStyle[];
 }
 
-const Button = ({disabled, onPress, children}: ButtonProps) => {
+const Button = ({
+  disabled,
+  onPress,
+  variation = 'primary',
+  children,
+  style,
+}: ButtonProps) => {
   return (
-    <TouchableOpacity
-      disabled={disabled}
-      style={styles.button}
-      onPress={onPress}>
-      {children}
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <TouchableOpacity
+        disabled={disabled}
+        style={[styles.button, styles[variation], style]}
+        onPress={onPress}>
+        {children}
+      </TouchableOpacity>
+    </View>
   );
 };
 

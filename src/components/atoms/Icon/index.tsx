@@ -1,3 +1,4 @@
+import { Colors } from '@theme';
 import React from 'react';
 import { TextStyle } from 'react-native';
 import { Icon as EvaIcon } from 'react-native-eva-icons';
@@ -9,7 +10,7 @@ interface IconProps {
   width?: number;
   height?: number;
   style?: TextStyle | TextStyle[];
-  fill: string;
+  fill?: string;
 }
 
 const Icon: React.FunctionComponent<IconProps> = ({
@@ -17,7 +18,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
   width = 24,
   height = 24,
   style,
-  fill,
+  fill = Colors.black,
 }) => {
   return (
     <EvaIcon

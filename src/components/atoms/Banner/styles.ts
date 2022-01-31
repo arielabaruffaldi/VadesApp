@@ -2,6 +2,7 @@ import {Spacing} from '@theme';
 
 import {StyleSheet, Dimensions} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Constants } from '@theme';
 
 const windowDimensions = Dimensions.get('window');
 
@@ -14,7 +15,7 @@ export default StyleSheet.create({
   image: {
     width: windowDimensions.width,
     height: windowDimensions.width / 3,
-    borderRadius: 15,
+    borderRadius: Constants.borderRadius,
   },
   title: {
     width: '100%',

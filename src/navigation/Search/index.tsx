@@ -1,20 +1,20 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Cart from '@screens/Cart';
+import Search from '@screens/Search';
 
 const Stack = createNativeStackNavigator();
 
-const CartStackNavigation = () => {
+const SearchStackNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="CartScreen"
+      initialRouteName="Search"
       screenOptions={({route, navigation}) => ({
         headerShown: false, 
       })}>
-      <Stack.Screen name="CartScreen" component={Cart} />
+      <Stack.Screen name="SearchScreen" component={Search} />
     </Stack.Navigator>
   );
 };
 
-export default CartStackNavigation;
+export default SearchStackNavigation;

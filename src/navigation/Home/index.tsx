@@ -1,19 +1,16 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import EventDetail from '@screens/EventDetail';
-import Home from '@screens/Home';
+import EventsFeed from '@screens/EventsFeed';
 import Events from '@screens/Events';
 
-import Categories from '@screens/Categories';
 
 import HomeHeader from '@organisms/HomeHeader';
-import EventDetailHeader from 'src/components/organisms/EventDetailHeader';
 
 const Stack = createNativeStackNavigator();
 
-const ShopStackNavigation = () => {
+const HomeStackNavigation = () => {
   return (
     <Stack.Navigator
       initialRouteName="Categories"
@@ -22,10 +19,9 @@ const ShopStackNavigation = () => {
       })}
       // screenOptions={{headerTitle: props => <Header {...props} />}}
     >
-      <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="EventsFeed"
+        component={EventsFeed}
         options={{headerTitle: props => <HomeHeader {...props} />}}
       />
       <Stack.Screen
@@ -38,4 +34,4 @@ const ShopStackNavigation = () => {
   );
 };
 
-export default ShopStackNavigation;
+export default HomeStackNavigation;

@@ -1,20 +1,20 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Cart from '@screens/Cart';
+import Profile from '@screens/Profile';
 
 const Stack = createNativeStackNavigator();
 
-const CartStackNavigation = () => {
+const ProfileStackNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="CartScreen"
+      initialRouteName="ProfileScreen"
       screenOptions={({route, navigation}) => ({
         headerShown: false, 
       })}>
-      <Stack.Screen name="CartScreen" component={Cart} />
+      <Stack.Screen name="ProfileScreen" component={Profile} />
     </Stack.Navigator>
   );
 };
 
-export default CartStackNavigation;
+export default ProfileStackNavigation;

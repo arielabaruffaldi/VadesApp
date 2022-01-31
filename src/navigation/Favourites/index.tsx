@@ -1,20 +1,20 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Cart from '@screens/Cart';
+import Favourites from '@screens/Favourites';
 
 const Stack = createNativeStackNavigator();
 
-const CartStackNavigation = () => {
+const FavouritesStackNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="CartScreen"
+      initialRouteName="FavouritesScreen"
       screenOptions={({route, navigation}) => ({
         headerShown: false, 
       })}>
-      <Stack.Screen name="CartScreen" component={Cart} />
+      <Stack.Screen name="FavouritesScreen" component={Favourites} />
     </Stack.Navigator>
   );
 };
 
-export default CartStackNavigation;
+export default FavouritesStackNavigation;

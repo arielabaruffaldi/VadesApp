@@ -1,20 +1,29 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import ShopStackNavigation from './Shop';
 import CartStackNavigation from './Cart';
+import CustomTabBar from '@organisms/CustomTabBar';
+import ProfileStackNavigation from './Profile';
+import FavouritesStackNavigation from './Favourites';
+import HomeStackNavigation from './Home';
+import SearchStackNavigation from './Search';
 
-const BottomTab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const AppNavigation = () => {
   return (
     <NavigationContainer>
-      <BottomTab.Navigator initialRouteName="Shop">
-        <BottomTab.Screen name="Shop" component={ShopStackNavigation} />
-        <BottomTab.Screen name="Cart" component={CartStackNavigation} />
-      </BottomTab.Navigator>
+      <Tab.Navigator
+        initialRouteName="Home"
+        tabBar={(props: any) => <CustomTabBar {...props} />}>
+        <Tab.Screen name="Home" component={HomeStackNavigation} />
+        <Tab.Screen name="Search" component={SearchStackNavigation} />
+        <Tab.Screen name="Cart" component={CartStackNavigation} />
+        <Tab.Screen name="Favourites" component={FavouritesStackNavigation} />
+        <Tab.Screen name="Profile" component={ProfileStackNavigation} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };

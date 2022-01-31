@@ -25,6 +25,9 @@ export default StyleSheet.create({
   gray: {
     color: Colors.gray,
   },
+  orange: {
+    color: Colors.orange,
+  },
   white: {
     color: Colors.white,
   },

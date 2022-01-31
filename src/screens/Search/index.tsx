@@ -5,7 +5,7 @@ import {CATEGORIES} from '@utils/data/categories';
 import CategoryItem from '@molecules/CategoryItem';
 import styles from './styles';
 
-const Categories = ({navigation}: any) => {
+const Search = ({navigation}: any) => {
   const handleSelectedCategory = (item: any) => {
     navigation.navigate('Events', {
       categoryId: item.id,
@@ -30,4 +30,4 @@ const Categories = ({navigation}: any) => {
   );
 };
 
-export default Categories;
+export default Search;

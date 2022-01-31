@@ -8,7 +8,7 @@ import Banner from '@atoms/Banner';
 import styles from './styles';
 import EventsList from '@organisms/EventsList';
 
-const Home = ({navigation}: any) => {
+const EventsFeed = ({navigation}: any) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.box}>
@@ -28,4 +28,4 @@ const Home = ({navigation}: any) => {
   );
 };
 
-export default Home;
+export default EventsFeed;

@@ -24,9 +24,11 @@ const EventsReducer = (state = initialState, action: EventsActions) => {
     case FILTER_EVENT:
       return {
         ...state,
-        filteredEvents: state.events.filter(
-          event => event.categoryId === action.payload,
-        ),
+        filteredEvents: state.events.filter(event => {
+          console.log("action", action)
+          console.log("event", event)
+          return event.categoryId === action.payload;
+        }),
       };
     default:
       return state;

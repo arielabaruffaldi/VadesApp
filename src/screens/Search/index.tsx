@@ -1,12 +1,12 @@
 import React from 'react';
-import {SafeAreaView, View, FlatList} from 'react-native';
+import { View, FlatList} from 'react-native';
 
-import CategoryItem, {Category} from '@molecules/CategoryItem';
+import CategoryItem from '@molecules/CategoryItem';
 import styles from './styles';
 
 import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '@store/';
 import {selectCategory} from '@store/actions/category';
+import Layout from '@organisms/Layout';
 
 const Search = ({navigation}: any) => {
   const categories = useSelector((state: any) => state.categories.categories);
@@ -24,15 +24,15 @@ const Search = ({navigation}: any) => {
   };
 
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
+    <Layout hasPadding>
+      <View>
         <FlatList
           data={categories}
           renderItem={renderCategories}
           keyExtractor={item => item.id.toString()}
         />
       </View>
-    </SafeAreaView>
+    </Layout>
   );
 };
 

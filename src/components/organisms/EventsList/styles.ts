@@ -11,7 +11,6 @@ export default StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'space-between',
     gap: 20,
-    marginTop: Spacing.SMALL
   },
   card: {
     marginVertical: Spacing.SMALL,

@@ -7,10 +7,11 @@ import Banner from '@atoms/Banner';
 
 import styles from './styles';
 import EventsList from '@organisms/EventsList';
+import Layout from '@organisms/Layout';
 
 const EventsFeed = ({navigation}: any) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <Layout noHeader style={styles.container}>
       <View style={styles.box}>
         <Banner
           image={
@@ -24,7 +25,7 @@ const EventsFeed = ({navigation}: any) => {
         />
         <EventsList events={EVENTS} />
       </View>
-    </SafeAreaView>
+    </Layout>
   );
 };
 

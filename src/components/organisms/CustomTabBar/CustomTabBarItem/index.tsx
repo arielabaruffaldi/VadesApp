@@ -20,12 +20,6 @@ const CustomTabBarItem = ({onTabPress, isActive, item}: Props) => {
     <TouchableOpacity onPress={() => onTabPress(path)} style={styles.container}>
       <View style={styles.content}>
         <Icon fill={isActive ? Colors.violet : Colors.mutedGray} name={icon} />
-        <Text
-          weight={isActive ? 'bold' : 'regular'}
-          size="xsmall"
-          color={isActive ? 'orange' : 'black'}
-          style={styles.text}
-        />
       </View>
     </TouchableOpacity>
   );

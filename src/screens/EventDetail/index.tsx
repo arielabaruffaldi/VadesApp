@@ -21,9 +21,8 @@ export interface Event {
 
 const EventDetail = () => {
   const event: Event = useSelector((state: RootState) => state.events.selected);
-  console.log('event', event);
   return (
-    <Layout title={event?.title}>
+    <Layout hasPadding title={event?.title}>
       <View>
         <Banner image={event.image} style={styles.bannerHeader} />
         <Text>{event.title}</Text>

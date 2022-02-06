@@ -1,17 +1,15 @@
 import React from 'react';
 
 import AppNavigation from './src/navigation';
-import {LogBox} from 'react-native';
 
-LogBox.ignoreLogs([
-  "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
-]);
+import {Provider} from 'react-redux';
+import store from '@store/index';
 
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <AppNavigation />
-    </>
+    </Provider>
   );
 };
 

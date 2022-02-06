@@ -1,10 +1,12 @@
 import Card from '@molecules/Card';
 import React from 'react';
+import {useDispatch} from 'react-redux';
 import {TextStyle, View} from 'react-native';
 
 import styles from './styles';
 
 import {useNavigation} from '@react-navigation/native';
+import {selectEvent} from '@store/actions/events';
 
 interface EventsListProps {
   style?: TextStyle | TextStyle[];
@@ -21,17 +23,21 @@ interface Event {
 
 const EventsList = ({style, events}: EventsListProps) => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+  const handleSelectedEvent = (event: Event) => {
+    dispatch(selectEvent(event.id));
+
+    navigation.navigate('EventDetail', {
+      title: event.title,
+    });
+  };
 
   return (
     <View style={[styles.cards]}>
       {events.map(event => (
         <Card
-          onPress={() =>
-            navigation.navigate('EventDetail', {
-              eventId: event.id,
-              title: event.title,
-            })
-          }
+          onPress={() => handleSelectedEvent(event)}
           style={[styles.card, style]}
           key={event.id}
           item={event}

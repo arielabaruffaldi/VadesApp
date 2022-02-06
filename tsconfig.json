@@ -40,6 +40,9 @@
       "@utils/*": [
         "src/utils/*"
       ],
+      "@store/*": [
+        "src/store/*"
+      ],
     }
   },
   "exclude": [

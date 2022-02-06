@@ -1,16 +1,22 @@
 import React from 'react';
 import {SafeAreaView, View, FlatList} from 'react-native';
 
-import {CATEGORIES} from '@utils/data/categories';
-import CategoryItem from '@molecules/CategoryItem';
+import CategoryItem, {Category} from '@molecules/CategoryItem';
 import styles from './styles';
 
+import {useDispatch, useSelector} from 'react-redux';
+import {RootState} from '@store/';
+import {selectCategory} from '@store/actions/category';
+
 const Search = ({navigation}: any) => {
+  const categories = useSelector((state: any) => state.categories.categories);
+  const dispatch = useDispatch();
+
   const handleSelectedCategory = (item: any) => {
     navigation.navigate('Events', {
-      categoryId: item.id,
       name: item.title,
     });
+    dispatch(selectCategory(item.id));
   };
 
   const renderCategories = ({item}: any) => {
@@ -21,7 +27,7 @@ const Search = ({navigation}: any) => {
     <SafeAreaView>
       <View style={styles.container}>
         <FlatList
-          data={CATEGORIES}
+          data={categories}
           renderItem={renderCategories}
           keyExtractor={item => item.id.toString()}
         />

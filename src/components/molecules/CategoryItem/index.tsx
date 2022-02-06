@@ -4,11 +4,11 @@ import {Text, View, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
 interface CategoryItemProps {
-  item: CategoryItem;
+  item: Category;
   onSelected: any;
 }
 
-interface CategoryItem {
+export interface Category {
   id: number;
   title: string;
   color: string;

@@ -5,7 +5,6 @@ import EventDetail from '@screens/EventDetail';
 import EventsFeed from '@screens/EventsFeed';
 import Events from '@screens/Events';
 
-
 import HomeHeader from '@organisms/HomeHeader';
 
 const Stack = createNativeStackNavigator();
@@ -14,11 +13,9 @@ const HomeStackNavigation = () => {
   return (
     <Stack.Navigator
       initialRouteName="Categories"
-      screenOptions={({route, navigation}) => ({
+      screenOptions={() => ({
         headerShown: false,
-      })}
-      // screenOptions={{headerTitle: props => <Header {...props} />}}
-    >
+      })}>
       <Stack.Screen
         name="EventsFeed"
         component={EventsFeed}

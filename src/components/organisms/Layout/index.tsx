@@ -25,17 +25,15 @@ const Layout = ({
   title,
   backAction,
   noHeader,
-  style,
   hasPadding,
   children,
 }: LayoutProps) => {
   const navigation = useNavigation();
-  console.warn("TITLE", title)
   return (
     <SafeAreaView style={styles.container}>
       <View style={[hasPadding && styles.hasPadding]}>
         {!noHeader && (
-          <View style={[styles.contentContainer, style]}>
+          <View style={[styles.header]}>
             <GoBack
               onPress={backAction ? backAction : () => navigation.goBack()}
             />

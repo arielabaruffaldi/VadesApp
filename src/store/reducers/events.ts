@@ -25,8 +25,6 @@ const EventsReducer = (state = initialState, action: EventsActions) => {
       return {
         ...state,
         filteredEvents: state.events.filter(event => {
-          console.log("action", action)
-          console.log("event", event)
           return event.categoryId === action.payload;
         }),
       };

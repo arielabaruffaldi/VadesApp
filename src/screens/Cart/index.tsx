@@ -19,7 +19,7 @@ const Cart = () => {
   const total = CART.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
 
   return (
-    <Layout>
+    <Layout hasPadding>
       <View style={styles.container}>
         <View>
           {CART.map(item => {

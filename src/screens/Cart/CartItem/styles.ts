@@ -10,7 +10,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: Spacing.TINY,
-    width: '100%',
   },
   image: {
     borderRadius: Constants.borderRadius,

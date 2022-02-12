@@ -1,10 +1,21 @@
-//CATEGORIES
 
-export const SELECT_CATEGORY = 'SELECT_CATEGORY';
+export const ADD_ITEM = 'ADD_ITEM';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
+export const CONFIRM_CART = 'CONFIRM_CART';
 
-export interface SetSelectedCategory {
-  type: typeof SELECT_CATEGORY;
+export interface AddItem {
+  type: typeof ADD_ITEM;
+  payload: any;
+}
+
+export interface RemoveItem {
+  type: typeof REMOVE_ITEM;
   payload: number;
 }
 
-export type CartActions = SetSelectedCategory;
+export interface ConfirmCart {
+  type: typeof CONFIRM_CART;
+  payload: any;
+}
+
+export type CartActions = AddItem | RemoveItem | ConfirmCart;

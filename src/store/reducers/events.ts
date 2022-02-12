@@ -11,7 +11,7 @@ interface InitialState {
 const initialState: InitialState = {
   events: EVENTS,
   filteredEvents: [],
-  selected: null,
+  selected: EVENTS[0],
 };
 
 const EventsReducer = (state = initialState, action: EventsActions) => {

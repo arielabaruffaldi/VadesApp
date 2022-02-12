@@ -1,28 +1,39 @@
-import Text from '@atoms/Text';
-import Layout from '@organisms/Layout';
-import { CART } from '@utils/data/cart';
 import React from 'react';
 import { View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+
+import Layout from '@organisms/Layout';
+import { RootState } from '@store/';
+import { removeItem, confirmCart } from '@store/actions/cart';
+
 import CartFooter from './CartFooter';
 import CartItem from './CartItem';
 import styles from './styles';
 
+// import { CART } from '@utils/data/cart';
+
+
 const Cart = () => {
+  const dispatch = useDispatch();
+  const items = useSelector((state: RootState) => state.cart.items)
+
+  const total = useSelector((state: RootState) => state.cart.total)
+
   const handleConfirmCart = () => {
-    console.log('confirmado');
+    dispatch(confirmCart(items, total))
   };
 
   const handleOnDelete = (id: number) => {
-    console.log('eliminado el id : ' + id);
+    dispatch(removeItem(id));
   };
 
-  const total = CART.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
+  
 
   return (
     <Layout hasPadding>
       <View style={styles.container}>
         <View>
-          {CART.map(item => {
+          {items.map((item: any) => {
             return (
               <CartItem
                 style={styles.box}

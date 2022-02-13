@@ -1,5 +1,6 @@
 import { Colors, Constants, Spacing } from "@theme";
 import { StyleSheet } from "react-native";
+import { isIos } from "src/theme/constants";
 
 export default StyleSheet.create({
     container: {
@@ -13,6 +14,7 @@ export default StyleSheet.create({
     input: {
         borderRadius: Constants.borderRadius,
         padding: Spacing.MEDIUM,
+        paddingVertical: isIos ? Spacing.MEDIUM : Spacing.SMALL,  
         // borderWidth: 1,
         // borderColor: Colors.black,
         backgroundColor: Colors.lightGray,

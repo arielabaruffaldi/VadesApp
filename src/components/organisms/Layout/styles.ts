@@ -9,7 +9,6 @@ export default StyleSheet.create({
   },
   hasPadding: {
     marginHorizontal: Spacing.LATERAL,
-    // justifyContent: 'center',
   },
   header: {
     paddingTop: 20,

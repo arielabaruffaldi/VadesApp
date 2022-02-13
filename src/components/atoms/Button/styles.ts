@@ -21,7 +21,8 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   tertiary: {
-    backgroundColor: Colors.mutedGray,
+    backgroundColor: 'transparent',
+    padding: 0,
   },
   outline: {
     backgroundColor: 'transparent',

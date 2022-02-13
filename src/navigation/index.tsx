@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {NavigationContainer} from '@react-navigation/native';
 
 import BottomTabsNavigator from './BottomTab';
-import Login from '@screens/Auth/Login';
 import LoginStackNavigation from './Auth';
-
+import {useSelector} from 'react-redux';
+import {RootState} from '@store/';
 
 const AppNavigation = () => {
-  const [isAuth, setIsAuth] = useState(null)
+  const userId = useSelector((state: RootState) => state.auth.userId);
   return (
     <NavigationContainer>
-      {isAuth ? <BottomTabsNavigator /> : <LoginStackNavigation />}
+      {userId ? <BottomTabsNavigator /> : <LoginStackNavigation />}
     </NavigationContainer>
   );
 };

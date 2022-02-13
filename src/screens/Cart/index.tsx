@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Layout from '@organisms/Layout';
@@ -15,19 +16,19 @@ import styles from './styles';
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const navigation = useNavigation();
   const items = useSelector((state: RootState) => state.cart.items)
 
   const total = useSelector((state: RootState) => state.cart.total)
 
   const handleConfirmCart = () => {
     dispatch(confirmCart(items, total))
+    navigation.navigate('Orders')
   };
 
   const handleOnDelete = (id: number) => {
     dispatch(removeItem(id));
   };
-
-  
 
   return (
     <Layout hasPadding>

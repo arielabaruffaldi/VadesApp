@@ -2,14 +2,15 @@ import Banner from '@atoms/Banner';
 import Button from '@atoms/Button';
 import Text from '@atoms/Text';
 import React from 'react';
-import { TextBase, View } from 'react-native';
+import {TextBase, View} from 'react-native';
 import Layout from '@organisms/Layout';
 
-import { useSelector, useDispatch } from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import styles from './styles';
-import { RootState } from '@store/';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {RootState} from '@store/';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Text as TextNative, TextStyle} from 'react-native';
+import {addItem} from '@store/actions/cart';
 
 export interface Event {
   categoryId: number;
@@ -24,9 +25,9 @@ const EventDetail = () => {
   const dispatch = useDispatch();
 
   const handleAddItem = () => {
-    console.log("ENTRO")
-    dispatch(event)
-  }
+    console.log('ENTRO');
+    dispatch(addItem(event));
+  };
 
   const event: Event = useSelector((state: RootState) => state.events.selected);
 
@@ -38,8 +39,8 @@ const EventDetail = () => {
         <TouchableOpacity>
           <TextNative>TEST</TextNative>
         </TouchableOpacity>
-        <Button onPress={() => handleAddItem}>
-          <Text color='white'>Agregar al carrito </Text>
+        <Button onPress={handleAddItem}>
+          <Text color="white">Agregar al carrito </Text>
         </Button>
       </View>
     </Layout>

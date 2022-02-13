@@ -5,14 +5,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import BottomTabsNavigator from './BottomTab';
 import Login from '@screens/Auth/Login';
+import LoginStackNavigation from './Auth';
 
-const Tab = createBottomTabNavigator();
 
 const AppNavigation = () => {
   const [isAuth, setIsAuth] = useState(null)
   return (
     <NavigationContainer>
-      {isAuth ? <BottomTabsNavigator /> : <Login />}
+      {isAuth ? <BottomTabsNavigator /> : <LoginStackNavigation />}
     </NavigationContainer>
   );
 };

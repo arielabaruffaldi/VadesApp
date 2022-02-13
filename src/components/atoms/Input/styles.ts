@@ -12,7 +12,7 @@ export default StyleSheet.create({
     },
     input: {
         borderRadius: Constants.borderRadius,
-        paddingHorizontal: Spacing.MEDIUM,
+        padding: Spacing.MEDIUM,
         // borderWidth: 1,
         // borderColor: Colors.black,
         backgroundColor: Colors.lightGray,

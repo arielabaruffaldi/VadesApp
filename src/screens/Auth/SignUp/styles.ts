@@ -27,7 +27,6 @@ export default StyleSheet.create({
     },
     footer: {
         marginVertical: Spacing.MEDIUM,
-
         // flex: 0.15,
     },
     signUpContainer: {

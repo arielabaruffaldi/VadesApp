@@ -1,25 +1,33 @@
-import React, {useState} from 'react';
-import {KeyboardAvoidingView, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState } from 'react';
+import { KeyboardAvoidingView, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Layout from '@organisms/Layout';
 import styles from './styles';
 import Text from '@atoms/Text';
 import Input from '@atoms/Input/Input';
 import Button from '@atoms/Button';
-import {useDispatch} from 'react-redux';
-import {signUp} from '@store/actions/auth';
+import { useDispatch } from 'react-redux';
+import { signUp } from '@store/actions/auth';
+import { validateEmail } from '@utils/validateInput';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
   const [password, setPassword] = useState('');
 
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
   const onConfirmSignUp = () => {
-    console.log('SignUp Confirm', email);
-    dispatch(signUp(email, password));
+    const isValid = validateEmail(email);
+    
+    if (isValid) {
+      dispatch(signUp(email, password));
+      setError('');
+    } else{
+      setError('Email is not valid');
+    }
   };
 
   const goToLogIn = () => {
@@ -31,7 +39,7 @@ const SignUp = () => {
       <KeyboardAvoidingView behavior="height" style={styles.container}>
         <View style={styles.title}>
           <Text size="medium" weight="regular" align="center">
-            SignUp
+            Sign Up
           </Text>
         </View>
 
@@ -44,6 +52,7 @@ const SignUp = () => {
             style={styles.input}
             onChangeText={text => setEmail(text)}
             value={email}
+            error={error}
           />
           <Input
             placeholder="Password"

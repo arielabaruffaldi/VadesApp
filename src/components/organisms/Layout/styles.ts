@@ -6,9 +6,10 @@ import { Spacing, Colors } from '@theme';
 export default StyleSheet.create({
   container: {
     alignItems: 'center',
+    flex: 1,
   },
   hasPadding: {
-    marginHorizontal: Spacing.LATERAL,
+    // marginHorizontal: Spacing.LATERAL,
   },
   header: {
     paddingTop: 20,

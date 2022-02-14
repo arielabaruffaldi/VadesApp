@@ -8,7 +8,7 @@ import Layout from '@organisms/Layout';
 import {useSelector, useDispatch} from 'react-redux';
 import styles from './styles';
 import {RootState} from '@store/';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native';
 import {Text as TextNative, TextStyle} from 'react-native';
 import {addItem} from '@store/actions/cart';
 

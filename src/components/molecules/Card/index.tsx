@@ -3,7 +3,7 @@ import {Image, TextStyle, View} from 'react-native';
 
 import styles from './styles';
 import Text from '@atoms/Text';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native';
 
 interface CardProps {
   item: any;

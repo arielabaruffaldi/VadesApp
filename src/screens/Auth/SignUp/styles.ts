@@ -15,7 +15,7 @@ export default StyleSheet.create({
     main: {
         // height: windowDimensions.height - 400,
         justifyContent: 'center',
-        marginVertical: Spacing.XLARGE,
+        marginVertical: Spacing.MEDIUM,
         // flex: 1,
     },
     input: {
@@ -26,7 +26,8 @@ export default StyleSheet.create({
         width: windowDimensions.width - Spacing.LATERAL,
     },
     footer: {
-        marginTop: Spacing.XLARGE
+        marginVertical: Spacing.MEDIUM,
+
         // flex: 0.15,
     },
     signUpContainer: {

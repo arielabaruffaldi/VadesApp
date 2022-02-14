@@ -8,11 +8,12 @@ import Banner from '@atoms/Banner';
 import styles from './styles';
 import EventsList from '@organisms/EventsList';
 import Layout from '@organisms/Layout';
+import { ScrollView } from 'react-native';
 
 const EventsFeed = ({navigation}: any) => {
   return (
     <Layout noHeader style={styles.container}>
-      <View style={styles.box}>
+      <ScrollView contentContainerStyle={styles.box} showsVerticalScrollIndicator={false}>
         <Banner
           image={
             'https://volemos.nyc3.digitaloceanspaces.com/blog/wp-content/uploads/2019/03/Holi_portada1.jpg'
@@ -24,7 +25,7 @@ const EventsFeed = ({navigation}: any) => {
           style={[styles.banner, styles.box]}
         />
         <EventsList events={EVENTS} />
-      </View>
+      </ScrollView>
     </Layout>
   );
 };

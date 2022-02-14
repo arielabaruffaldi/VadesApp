@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import {TouchableWithoutFeedback} from 'react-native';
 
 import styles from './styles';
 import Icon from '@atoms/Icon';

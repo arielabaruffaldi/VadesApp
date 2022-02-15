@@ -7,7 +7,9 @@ interface InitialState {
 
 const initialState: InitialState = {
   token: null,
-  userId: null,
+  //TODO: uncomment this line 
+  //userId: null,
+  userId: 'asdasdasd',
 };
 
 const AuthReducer = (state = initialState, action: AuthActions) => {

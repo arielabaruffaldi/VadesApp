@@ -1,11 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 import { Spacing, Colors } from '@theme';
+
+const windowDimensions = Dimensions.get('window');
 
 
 export default StyleSheet.create({
   container: {
     alignItems: 'center',
+    flex: 1,
+  },
+  scrollView:{
+    width: windowDimensions.width - Spacing.LATERAL,
     flex: 1,
   },
   hasPadding: {

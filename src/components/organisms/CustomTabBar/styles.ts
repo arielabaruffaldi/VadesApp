@@ -1,17 +1,18 @@
-import { Colors } from '@theme';
-import {StyleSheet} from 'react-native';
+import { Colors, Spacing } from '@theme';
+import {Dimensions, StyleSheet} from 'react-native';
 
-export const TAB_HEIGHT = 91;
+export const TAB_HEIGHT = 65;
+const windowDimensions = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
-    position: 'relative',
-    width: '100%',
+    // position: 'relative',
+    width: windowDimensions.width,
   },
   content: {
     width: '100%',
     height: TAB_HEIGHT,
-    paddingHorizontal: 52,
+    paddingHorizontal: Spacing.MEDIUM,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

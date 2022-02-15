@@ -35,6 +35,7 @@ const Layout = ({
       <ScrollView
         contentContainerStyle={[hasPadding && styles.hasPadding]}
         showsVerticalScrollIndicator={false}
+        style={styles.scrollView}
       >
         {!noHeader && (
           <View style={[styles.header]}>

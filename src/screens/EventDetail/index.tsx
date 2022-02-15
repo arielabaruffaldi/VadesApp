@@ -25,7 +25,6 @@ const EventDetail = () => {
   const dispatch = useDispatch();
 
   const handleAddItem = () => {
-    console.log('ENTRO');
     dispatch(addItem(event));
   };
 

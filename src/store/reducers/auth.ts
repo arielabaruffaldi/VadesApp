@@ -1,4 +1,4 @@
-import {AuthActions, SIGN_UP} from '@store/types/auth';
+import { AuthActions, SIGN_UP, SIGN_IN } from '@store/types/auth';
 
 interface InitialState {
   token: string | null;
@@ -13,6 +13,12 @@ const initialState: InitialState = {
 const AuthReducer = (state = initialState, action: AuthActions) => {
   switch (action.type) {
     case SIGN_UP:
+      return {
+        ...state,
+        token: action.payload.token,
+        userId: action.payload.userId,
+      };
+    case SIGN_IN:
       return {
         ...state,
         token: action.payload.token,

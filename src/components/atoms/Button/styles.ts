@@ -29,4 +29,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.black,
   },
+  disabled: {
+    opacity: 0.35,
+  }
 });

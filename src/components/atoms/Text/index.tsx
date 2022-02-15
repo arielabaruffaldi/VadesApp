@@ -6,7 +6,7 @@ interface TextProps {
   style?: TextStyle | TextStyle[];
   size?: 'xsmall' | 'small' | 'medium' | 'large';
   weight?: 'light' | 'regular' | 'bold';
-  color?: 'black' | 'white' | 'gray' | 'orange';
+  color?: 'black' | 'white' | 'gray' | 'orange' | 'error';
   align?: 'left' | 'center' | 'right';
   children?: ReactNode;
 }

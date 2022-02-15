@@ -22,7 +22,7 @@ const Button = ({
     <View style={styles.container}>
       <TouchableOpacity
         disabled={disabled}
-        style={[styles.button, styles[variation], style]}
+        style={[styles.button, styles[variation], style, disabled && styles.disabled]}
         onPress={onPress}>
         {children}
       </TouchableOpacity>

@@ -1,21 +1,30 @@
-import React, {useState} from 'react';
-import {KeyboardAvoidingView, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState } from 'react';
+import { KeyboardAvoidingView, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Layout from '@organisms/Layout';
 import styles from './styles';
 import Text from '@atoms/Text';
 import Input from '@atoms/Input/Input';
 import Button from '@atoms/Button';
+import { useDispatch } from 'react-redux';
+import { signIn } from '@store/actions/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const [errorLogin, setErrorLogin] = useState('');
+  const dispatch = useDispatch();
   const navigation = useNavigation();
 
+  const handleError = (e: string) => {
+    setErrorLogin(e)
+  }
+
   const onConfirmLogin = () => {
-    console.log('Login Confirm', email);
+    if (email && password) {
+      dispatch(signIn(email, password, handleError))
+    }
   };
 
   const goToSignUp = () => {
@@ -50,7 +59,8 @@ const Login = () => {
             onChangeText={text => setPassword(text)}
             value={password}
           />
-          <Button onPress={onConfirmLogin} style={styles.buttonConfirm}>
+          {errorLogin !== '' && <Text color='error'>{errorLogin}</Text>}
+          <Button disabled={!email || !password} onPress={onConfirmLogin} style={styles.buttonConfirm}>
             <Text color="white" align="center">
               Login
             </Text>

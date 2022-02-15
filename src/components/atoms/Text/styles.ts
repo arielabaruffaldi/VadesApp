@@ -16,14 +16,14 @@ export default StyleSheet.create({
   center: {
     textAlign: 'center',
   },
-  error: {
-    color: Colors.error,
-  },
   black: {
     color: Colors.black,
   },
   gray: {
     color: Colors.gray,
+  },
+  error: {
+    color: Colors.error,
   },
   orange: {
     color: Colors.orange,
